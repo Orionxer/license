@@ -2,7 +2,7 @@
 
 Simple application for common license.
 
+**execute this demo to see the print**
 ```sh
-# execute this demo to see the print
 python hello.py
 ```
