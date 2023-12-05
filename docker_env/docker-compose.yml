@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  ubuntu:
+    image: ubuntu:20.04
+    tty: true
+    # 设置终端显示方式
+    environment:
+      - LANG=C.UTF-8
+    # volumes:
+    #  - ./docker_ubuntu_volume:/home
+    command:
+      - bash
+      - -c
+      - |
+        # 安装必要软件
+        apt-get update
+        apt-get install -y sudo git curl vim htop python3 wget iputils-ping apt-utils
+        # 设置git用户
+        git config --global user.name 'Username'
+        git config --global user.email 'user@email.com'
+        # 设置git自动补全命令
+        echo 'source /usr/share/bash-completion/completions/git' >> /root/.bashrc
+        # 安装github-cli
+        curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg 
+        sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list
+        sudo apt update
+        sudo apt install gh -y
+        # 提示容器启动
+        echo -e "\033[32m### Ubuntu Start Up \033[0m"
+        # 以/bin/bash运行容器
+        /bin/bash
+        # 最后一步需要进入容器执行命令: gh auth login 根据提示进行验证
