@@ -1,5 +1,5 @@
 # License archives
-![Static Badge](https://img.shields.io/badge/author-Orionxer-green)
+![Static Badge](https://img.shields.io/badge/author-Orionxer-purple)
 ![GitHub License](https://img.shields.io/github/license/orionxer/license)
 ![GitHub top language](https://img.shields.io/github/languages/top/orionxer/license)
 
