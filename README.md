@@ -18,8 +18,6 @@ If python environemnt is satisfied, jump to [Test](#test) chapter directly.
 ### Docker Environment
 > It's recommended to run python in docker.
 #### Dokcer compose
-### Dokcer compose
-### Run test in container
 
 ### Test
 ```sh
@@ -29,6 +27,10 @@ cd license
 python hello.py
 ```
 ## How to license a repository
+### Choose a License Plugin for VSCode
+The [Choose a License](https://marketplace.visualstudio.com/items?itemName=ultram4rine.vscode-choosealicense) plugin for VSCode will generate a license for your project according to your choice.
+### Open Source Initiative
 
+## The famouse porject
 
 
